@@ -14,7 +14,12 @@ The procedure accepts a `MenuID` and returns information about the selected food
 - Provides multiple "You May Also Like" recommendations
 - Returns the results in JSON format
 - Uses database relationships to connect food items with their recommendations
-- Uses subqueries to prevent duplicate results when a food has multiple recommendations
+- Accepts the food name and requested quantity as parameters.
+Checks the maximum quantity allowed per order.
+Returns the food details and price when the requested quantity is valid.
+Updates the available quantity in the RestaurantMenu table after an order is placed.
+Prevents the order from proceeding when the requested quantity exceeds the allowed limit.
+
 
 ## Database Structure
 
@@ -40,11 +45,9 @@ This makes the recommendation system flexible and allows recommendations to be c
 ## Python Integration
 
 The stored procedure is called from Python using `pyodbc`.
-
 Python sends the selected `MenuID` to SQL Server and receives the JSON response.
 
 ## Purpose
 
 The goal of this procedure is to provide the backend logic for a restaurant ordering and recommendation system.
-
-It separates the recommendation logic from the application layer, allowing the database to manage food relationships and recommendations efficiently.
+The procedure automates the restaurant ordering process while helping maintain accurate stock quantities and enforcing the maximum number of items that can be ordered at once.
