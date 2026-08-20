@@ -1,4 +1,4 @@
-CREATE TABLE [Loyalty_2026-03-09T10-09Z].dbo.RestaurantMenu (
+CREATE TABLE [dbo.RestaurantMenu (
   MenuID varchar(15) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
   RestaurantID varchar(15) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
   DisplayOrder smallint NOT NULL,
