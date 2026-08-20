@@ -27,4 +27,4 @@ for row in results:
 print(r.hgetall("menu:13"))       
 
 
-
+had to use function on cursor.execute so i created a function
