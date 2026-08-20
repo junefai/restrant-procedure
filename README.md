@@ -19,6 +19,7 @@ Checks the maximum quantity allowed per order.
 Returns the food details and price when the requested quantity is valid.
 Updates the available quantity in the RestaurantMenu table after an order is placed.
 Prevents the order from proceeding when the requested quantity exceeds the allowed limit.
+-added get_recommendation_by_redis.py after order is placed instead of checking the database we use redis to increase speed,less database workload,better scalability,lower latency
 
 
 ## Database Structure
